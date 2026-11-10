@@ -135,7 +135,7 @@ class GatewayconfigApp:
         """
         if is_raspberry_pi():
             btn = self.get_button_gpio()
-            if btn is not None:
+            if btn is not None and btn is not False:
                 self.user_button = Button(btn, hold_time=USER_BUTTON_HOLD_SECONDS)
             led = self.get_status_led_gpio()
             if led is not None:
